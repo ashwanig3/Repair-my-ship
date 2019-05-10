@@ -61,11 +61,11 @@ app.use(bodyParser.json());
 
 // Requiring routes
 // app.use('/api/v1', require('./server/routers/api'));
-// app.use(require('./server/routers/index'));
+app.use(require('./server/routes/index'));
 
-app.get('/', (req, res) => {
-    res.render('index');
-  });
+// app.get('/', (req, res) => {
+//     res.render('index');
+//   });
 
 // listen app on 8001 port
 const server = app.listen(8001, () => {

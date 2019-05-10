@@ -12,3 +12,72 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.btn {
+  background-color: palevioletred;
+  padding: 8px 15px;
+  border: none;
+  width: 30%;
+  color: #ffffff;
+  font-weight: bold;
+  outline: none;
+}
+
+.signup-form {
+  background-color: pink;
+  height: 100vh;
+  padding-top: 70px;
+  .form-fields {
+    width: 33%;
+    margin: 0px auto;
+    line-height: 1.5;
+    background-color: #ffffff;
+    padding: 30px;
+    p {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+    }
+    input {
+      width: 100%;
+      padding: 10px 20px;
+      margin-top: 20px;
+      outline: none;
+    }
+    button {
+      margin-top: 30px;
+    }
+  }
+}
+
+.dashboard {
+  background-color: pink;
+  height: 100vh;
+  position: relative;
+  .hero-section {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    h1 {
+      font-size: 50px;
+      font-weight: 300;
+    }
+    button {
+      width: 60%;
+      margin: 0 20%;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
+  nav {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    button {
+      width: 42%;
+      margin-left: 10px;
+    }
+  }
+}
