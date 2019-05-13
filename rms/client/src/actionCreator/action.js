@@ -14,3 +14,17 @@ export function creatAccount(userData) {
         .then(data => console.log(data))
     }
 }
+
+export function userLogin(credential) {
+    return dispatch => {
+        fetch(`${url}/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credential)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
+}

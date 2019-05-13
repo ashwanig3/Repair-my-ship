@@ -50,7 +50,7 @@ if (process.env.NODE_ENV === 'development') {
 
 // Initialize passport
 app.use(passport.initialize());
-// require("./server/modules/passport")(passport);
+require("./server/modules/passport")(passport);
 
 // use passport as middleware
 // use cors
