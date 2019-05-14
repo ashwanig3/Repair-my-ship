@@ -7,11 +7,13 @@ const { Schema } = mongoose;
 
 const userSchema = mongoose.Schema({
   name: { type: String, required: true },
+  username: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
 });
 
 userSchema.methods.verifyPassword = function(userPassword, cb) {
+  console.log(userPassword, 'userpswd')
   bcrypt.compare(userPassword, this.password, function(err, res) {
     console.log(err);
     if(err) cb(err, false);
@@ -20,7 +22,6 @@ userSchema.methods.verifyPassword = function(userPassword, cb) {
 }
 
 userSchema.pre('save', function(next){
-
   var password = this.password;
   var self = this;
 

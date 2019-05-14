@@ -25,6 +25,8 @@ export function userLogin(credential) {
             body: JSON.stringify(credential)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            dispatch({type: 'LOGIN_SUCCESS', data: data.user})
+        })
     }
 }

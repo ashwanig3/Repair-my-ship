@@ -49,10 +49,10 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Initialize passport
+// use passport as middleware
 app.use(passport.initialize());
 require("./server/modules/passport")(passport);
 
-// use passport as middleware
 // use cors
 app.use(cors());
 
@@ -63,9 +63,6 @@ app.use(bodyParser.json());
 // app.use('/api/v1', require('./server/routers/api'));
 app.use(require('./server/routes/index'));
 
-// app.get('/', (req, res) => {
-//     res.render('index');
-//   });
 
 // listen app on 8001 port
 const server = app.listen(8001, () => {

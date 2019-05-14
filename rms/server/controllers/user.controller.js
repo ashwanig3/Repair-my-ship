@@ -21,7 +21,6 @@ module.exports = {
     },
     logIn: (req, res, next) => {
         passport.authenticate('local', function(err, user, info) {
-          console.log(user, "checkpost2")
           if (err) { return next(err); }
           if (!user) { 
             return res.status(404).json({

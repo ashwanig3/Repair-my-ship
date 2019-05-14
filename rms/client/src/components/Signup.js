@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 class Signup extends Component {
     state={
         name: '',
+        username: '',
         email: '',
         password: ''
     }
@@ -23,6 +24,7 @@ class Signup extends Component {
                 <form onSubmit={this.handleSubmit} className="form-fields">
                     <p>Signup Form</p>
                     <input type="text" name="name" placeholder="Your name" required onChange={this.handleChange} />
+                    <input type="text" name="username" placeholder="username" required onChange={this.handleChange} />
                     <input type="email" name="email" placeholder="Your email" required onChange={this.handleChange} />
                     <input type="password" name="password" placeholder="Password" required onChange={this.handleChange} />
                     <button className="btn" type="submit">Submit</button>

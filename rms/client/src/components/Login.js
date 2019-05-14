@@ -4,7 +4,7 @@ import { userLogin } from '../actionCreator/action';
 
 class Login extends Component {
     state = {
-        email: '',
+        username: '',
         password: ''
     }
 
@@ -24,7 +24,7 @@ class Login extends Component {
             <div>
                 <form onSubmit={this.handleSubmit} className="form-fields">
                     <p>Login Form</p>
-                    <input type="email" name="email" placeholder="Your email" required onChange={this.handleChange} />
+                    <input type="text" name="username" placeholder="Username" required onChange={this.handleChange} />
                     <input type="password" name="password" placeholder="Password" required onChange={this.handleChange} />
                     <button className="btn" type="submit">Login</button>
                 </form>

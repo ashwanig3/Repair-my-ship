@@ -3,6 +3,7 @@ const User = require('./../models/user')
 
 
 module.exports = function(passport) {
+  console.log('check000')
   passport.serializeUser(function(user, done) {
     done(null, user._id);
   });
@@ -14,9 +15,9 @@ module.exports = function(passport) {
   });
   
   passport.use(new Local(
-    function(email, password, done) {
-        console.log(email,password, "checkpost")
-      User.findOne({ email: email }, function (err, user) {
+    function(username, password, done) {
+        console.log(username,password, "checkpost")
+      User.findOne({ username: username }, function (err, user) {
         if (err) { return done(err); }
         if (!user) { return done(null, false); }
         user.verifyPassword(password, function(err, isMatched) {
