@@ -10,6 +10,10 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
     res.render('index')
 })
+
+router.get('/:userId/issue', (req, res) => {
+    res.render('index')
+})
 router.post('/api/user', userController.signup);
 router.post('/api/login', userController.logIn);
 // router.post('/api/login', 

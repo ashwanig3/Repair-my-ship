@@ -81,3 +81,33 @@ code {
     }
   }
 }
+
+.form-container {
+  background-color: pink;
+  height: 100vh;
+  padding-top: 50px;
+  h1 {
+    text-align: center;
+  }
+  form {
+    width: 50%;
+    margin: 30px auto;
+    label {
+      font-size: 20px;
+    }
+    button {
+      margin-top: 20px;
+    }
+  }
+  textarea {
+    width: 100%;
+  }
+}
+.top-nav {
+  position: relative;
+  .profile {
+    position: absolute;
+    right: 30px;
+    top: 0;
+  }
+}

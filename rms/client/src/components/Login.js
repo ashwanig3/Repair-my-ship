@@ -16,7 +16,11 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.dispatch(userLogin(this.state))
+        this.props.dispatch(userLogin(this.state, (succeed, data) => {
+            if(succeed) {
+                this.props.history.push(`/${data._id}/issue`)
+            }
+        }))
     }
 
     render() {

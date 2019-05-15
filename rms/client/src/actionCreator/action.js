@@ -15,7 +15,7 @@ export function creatAccount(userData) {
     }
 }
 
-export function userLogin(credential) {
+export function userLogin(credential, cb) {
     return dispatch => {
         fetch(`${url}/login`, {
             method: 'POST',
@@ -26,7 +26,22 @@ export function userLogin(credential) {
         })
         .then(res => res.json())
         .then(data => {
-            dispatch({type: 'LOGIN_SUCCESS', data: data.user})
+            dispatch({type: 'LOGIN_SUCCESS', data: data.user});
+            cb(true, data.user)
         })
+    }
+}
+
+export function postIssue(issue) {
+    return dispatch => {
+        fetch(`${url}/:userId/issue`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(issue)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
     }
 }
